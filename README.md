@@ -1,35 +1,57 @@
 # Ansible Role: NFS
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-nfs.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-nfs)
-
-Installs NFS utilities on RedHat/CentOS or Debian/Ubuntu.
+Installs and configures NFS on RHEL/CentOS ~~or Debian/Ubuntu~~.
 
 ## Requirements
 
-None.
+None
 
 ## Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    nfs_exports: []
+```yaml
+nfs_exports: []
+```
 
-A list of exports which will be placed in the `/etc/exports` file. See Ubuntu's simple [Network File System (NFS)](https://help.ubuntu.com/14.04/serverguide/network-file-system.html) guide for more info and examples. (Simple example: `nfs_exports: { "/home/public    *(rw,sync,no_root_squash)" }`).
+A list of exports which will be placed in the `/etc/exports` file.
+
+```yaml
+nfs_exports_template_path: exports.j2
+```
+
+The exports file to be copied. Defaults the the simple template inside `templates/exports.j2`. This path should be relative to the directory from which you run your playbook.
 
 ## Dependencies
 
-None.
+None
 
 ## Example Playbook
 
-    - hosts: db-servers
-      roles:
-        - { role: geerlingguy.nfs }
+```yaml
+- hosts: servers
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - role: rwanyoike.nfs
+```
+
+Inside `vars/main.yml`:
+
+```yaml
+nfs_exports:
+  - /home/public    *(rw,sync,no_root_squash)
+
+# ... etc ...
+```
 
 ## License
 
-MIT / BSD
+MIT
 
 ## Author Information
 
-This role was created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
+- This role was created in 2014 by [Jeff Geerling](http://jeffgeerling.com/), author of [Ansible for DevOps](http://ansiblefordevops.com/).
+- This role was forked in 2015 by [Raymond Wanyoike](https://github.com/rwanyoike).

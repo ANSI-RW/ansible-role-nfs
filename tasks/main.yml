@@ -7,13 +7,13 @@
 
 - name: Copy exports file.
   template:
-    src: exports.j2
+    src: "{{ nfs_exports_template_path }}"
     dest: /etc/exports
     owner: root
     group: root
     mode: 0644
   notify: restart nfs
 
-- name: Ensure nfs is running.
-  service: "name={{ nfs_server_daemon }} state=started enabled=yes"
+- name: Ensure NFS is started and enabled.
+  service: name="{{ nfs_server_daemon }}" state=started enabled=yes
   when: nfs_exports|length
