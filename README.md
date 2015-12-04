@@ -1,5 +1,7 @@
 # Ansible Role: NFS
 
+[![Build Status](https://img.shields.io/travis/rwanyoike/ansible-role-nfs.svg)](https://travis-ci.org/rwanyoike/ansible-role-nfs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rwanyoike/ansible-role-nfs/master/LICENSE)
+
 Installs and configures NFS on RHEL/CentOS ~~or Debian/Ubuntu~~.
 
 ## Requirements
