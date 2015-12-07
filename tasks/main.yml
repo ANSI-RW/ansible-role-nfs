@@ -2,18 +2,18 @@
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yml"
 
+- name: Define nfs_service.
+  set_fact:
+    nfs_service: "{{ __nfs_service }}"
+  when: nfs_service is not defined
+
 - include: setup-RedHat.yml
   when: ansible_os_family == "RedHat"
 
-- name: Copy exports file.
-  template:
-    src: "{{ nfs_exports_template_path }}"
-    dest: /etc/exports
-    owner: root
-    group: root
-    mode: 0644
+- name: Copy /etc/exports.
+  template: src=exports.j2 dest=/etc/exports owner=root group=root
   notify: restart nfs
 
-- name: Ensure NFS is started and enabled.
-  service: name="{{ nfs_server_daemon }}" state=started enabled=yes
+- name: Start and enable NFS.
+  service: name={{ nfs_service }} state=started enabled=yes
   when: nfs_exports|length

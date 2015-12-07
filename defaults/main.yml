@@ -1,3 +1,4 @@
 ---
+# Directories exported to NFS clients
 nfs_exports: []
-nfs_exports_template_path: exports.j2
+  # - /home/public    *(rw,sync,no_root_squash)

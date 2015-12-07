@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/rwanyoike/ansible-role-nfs.svg)](https://travis-ci.org/rwanyoike/ansible-role-nfs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rwanyoike/ansible-role-nfs/master/LICENSE)
 
-Installs and configures NFS on RHEL/CentOS ~~or Debian/Ubuntu~~.
+Installs and configures [NFS](https://en.wikipedia.org/wiki/Network_File_System) on RHEL/CentOS ~~or Debian/Ubuntu~~.
 
 ## Requirements
 
@@ -13,16 +13,11 @@ None
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
 ```yaml
+# Directories exported to NFS clients
 nfs_exports: []
 ```
 
-A list of exports which will be placed in the `/etc/exports` file.
-
-```yaml
-nfs_exports_template_path: exports.j2
-```
-
-The exports file to be copied. Defaults the the simple template inside `templates/exports.j2`. This path should be relative to the directory from which you run your playbook.
+A list of exports which will be placed in `/etc/exports`.
 
 ## Dependencies
 

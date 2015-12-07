@@ -2,5 +2,5 @@
 - name: Install NFS.
   yum: name=nfs-utils state=present
 
-- name: Ensure rpcbind is started and enabled.
+- name: Start and enable rpcbind.
   service: name=rpcbind state=started enabled=yes
