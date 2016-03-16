@@ -2,9 +2,9 @@
 - name: include os-specific variables
   include_vars: "{{ ansible_os_family }}.yml"
 
-- name: define nfs_service_name
-  set_fact: nfs_service_name={{ __nfs_service_name }}
-  when: nfs_service_name is not defined
+- name: define nfs_service
+  set_fact: nfs_service={{ __nfs_service }}
+  when: nfs_service is not defined
 
 - include: setup-RedHat.yml
   when: ansible_os_family == "RedHat"
@@ -14,5 +14,5 @@
   notify: restart nfs
 
 - name: start and enable nfs
-  service: name={{ nfs_service_name }} state=started enabled=yes
+  service: name={{ nfs_service }} state=started enabled=yes
   when: nfs_exports|length
