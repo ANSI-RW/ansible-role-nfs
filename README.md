@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/ANSI-RW/ansible-role-nfs.svg)](https://travis-ci.org/ANSI-RW/ansible-role-nfs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ANSI-RW/ansible-role-nfs/master/LICENSE)
 
-Installs and configures NFS on RHEL/CentOS ~~or Debian/Ubuntu~~.
+Installs and configures NFS on RHEL/CentOS or Debian/Ubuntu.
 
 ## Requirements
 
