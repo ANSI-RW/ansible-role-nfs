@@ -1,6 +1,6 @@
 # Ansible Role: NFS
 
-[![Build Status](https://img.shields.io/travis/thestarkenya/ansible-role-nfs.svg)](https://travis-ci.org/thestarkenya/ansible-role-nfs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/thestarkenya/ansible-role-nfs/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/ANSI-RW/ansible-role-nfs.svg)](https://travis-ci.org/ANSI-RW/ansible-role-nfs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ANSI-RW/ansible-role-nfs/master/LICENSE)
 
 Installs and configures NFS on RHEL/CentOS ~~or Debian/Ubuntu~~.
 
@@ -30,14 +30,14 @@ None
     - vars/main.yml
 
   roles:
-    - role: ansible-role-nfs
+    - { role: ANSI-RW.nfs }
 ```
 
 Inside `vars/main.yml`:
 
 ```yaml
 nfs_exports:
-  - /home/public *(rw,sync,no_root_squash)
+  - /mnt/public *(rw,sync,no_root_squash)
 
 # ... etc ...
 ```
