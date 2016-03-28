@@ -16,6 +16,10 @@
   template: src=exports.j2 dest=/etc/exports owner=root group=root
   notify: restart nfs
 
+- name: start and enable rpcbind
+  service: name=rpcbind state=started enabled=yes
+  when: nfs_enable_service
+
 - name: start and enable nfs
   service: name={{ nfs_service }} state=started enabled=yes
   when: nfs_enable_service
