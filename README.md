@@ -1,14 +1,17 @@
-# Ansible Role: NFS
+Ansible Role: NFS
+=================
 
 [![Build Status](https://img.shields.io/travis/ANSI-RW/ansible-role-nfs.svg)](https://travis-ci.org/ANSI-RW/ansible-role-nfs) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ANSI-RW/ansible-role-nfs/master/LICENSE)
 
 Installs and configures NFS on RHEL/CentOS or Debian/Ubuntu.
 
-## Requirements
+Requirements
+------------
 
 None
 
-## Role Variables
+Role Variables
+--------------
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
@@ -19,11 +22,13 @@ nfs_exports: []
 nfs_enable_service: true
 ```
 
-## Dependencies
+Dependencies
+------------
 
 None
 
-## Example Playbook
+Example Playbook
+----------------
 
 ```yaml
 - hosts: servers
@@ -44,6 +49,7 @@ nfs_exports:
 # ... etc ...
 ```
 
-## License
+License
+-------
 
 MIT
