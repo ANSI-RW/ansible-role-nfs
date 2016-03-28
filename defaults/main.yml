@@ -1,3 +1,5 @@
 ---
 # Directories exported to NFS
 nfs_exports: []
+# Enable service
+nfs_enable_service: true

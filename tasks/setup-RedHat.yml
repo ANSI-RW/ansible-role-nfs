@@ -4,3 +4,4 @@
 
 - name: start and enable rpcbind
   service: name=rpcbind state=started enabled=yes
+  when: nfs_enable_service

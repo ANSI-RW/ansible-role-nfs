@@ -1,3 +1,4 @@
 ---
 - name: restart nfs
   service: name={{ nfs_service }} state=restarted
+  when: nfs_enable_service
