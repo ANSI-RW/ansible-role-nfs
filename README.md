@@ -15,6 +15,8 @@ Available variables are listed below, along with default values (see `defaults/m
 ```yaml
 # Directories exported to NFS
 nfs_exports: []
+# Enable service
+nfs_enable_service: true
 ```
 
 ## Dependencies
